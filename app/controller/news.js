@@ -29,6 +29,15 @@ class NewsController extends Controller {
     console.log(this.ctx.query)
     this.ctx.body = '新闻详情'
   }
+
+  async spiderNews() {
+    const spidernews = await this.service.news.getSpiderNews()
+    console.log(spidernews)
+    await this.ctx.render('spidernews', {
+      list: spidernews,
+    })
+    // this.ctx.body = '新闻详情'
+  }
 }
 
 module.exports = NewsController
