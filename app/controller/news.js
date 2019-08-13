@@ -4,7 +4,13 @@ const Controller = require('egg').Controller
 
 class NewsController extends Controller {
   async index() {
-    this.ctx.body = '新闻首页'
+    const msg = 'ejs'
+    const list = [ '111', '222', '333' ]
+    await this.ctx.render('news', {
+      msg,
+      list,
+    })
+    // this.ctx.body = '新闻首页'
   }
 
   async list() {
