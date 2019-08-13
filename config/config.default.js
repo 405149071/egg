@@ -24,6 +24,7 @@ module.exports = appInfo => {
       '.html': 'ejs',
     },
   }
+  config.spiderUrl = 'http://www.phonegap100.com/'
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

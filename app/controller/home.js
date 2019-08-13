@@ -7,7 +7,8 @@ class HomeController extends Controller {
     const {
       ctx,
     } = this
-    ctx.body = '你好hi, egg'
+    const url = this.config.spiderUrl
+    ctx.body = '你好hi, egg' + url
   }
 
   async news() {
