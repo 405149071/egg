@@ -3,8 +3,20 @@
 const Controller = require('egg').Controller;
 
 class NewsController extends Controller {
-  async echo() {
-    this.ctx.body = '哈喽，news';
+  async index() {
+    this.ctx.body = '新闻首页';
+  }
+
+  async list() {
+    // 获取动态路由 传值  // koa  = ctx.params
+    console.log(this.ctx.params);
+    this.ctx.body = '新闻列表';
+  }
+
+  async content() {
+    // 获取get传值  koa  = ctx.query
+    console.log(this.ctx.query);
+    this.ctx.body = '新闻详情';
   }
 }
 
