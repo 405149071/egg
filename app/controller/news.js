@@ -4,8 +4,13 @@ const Controller = require('egg').Controller
 
 class NewsController extends Controller {
   async index() {
-    const msg = 'ejs'
-    const list = [ '111', '222', '333' ]
+    // 数据从服务层取得
+    // const msg = 'ejs'
+    const msg = await this.service.user.getUserInfo()
+    // const list = [ '111', '222', '333' ]
+    // 数据从另一个service层获取
+    const list = await this.service.news.getNewsList()
+    // console.log(list, '11111')
     await this.ctx.render('news', {
       msg,
       list,
