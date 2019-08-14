@@ -18,5 +18,5 @@ module.exports = app => {
 
   // daily
   router.get('/daily', controller.daily.index)
-
+  router.get('/dailylogin', controller.daily.loginCheck)
 }
