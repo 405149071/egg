@@ -16,4 +16,7 @@ module.exports = app => {
   router.post('/newssave', controller.news.newsSave)
   router.get('/spider', controller.news.spiderNews)
 
+  // daily
+  router.get('/daily', controller.daily.index)
+
 }
