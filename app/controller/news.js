@@ -11,6 +11,8 @@ class NewsController extends Controller {
     // 数据从另一个service层获取
     const list = await this.service.news.getNewsList()
     // console.log(list, '11111')
+    // 获取cookie的值
+    console.log('cookie username=', this.ctx.cookies.get('username'))
     await this.ctx.render('news', {
       msg,
       list,
