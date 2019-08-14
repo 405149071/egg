@@ -13,5 +13,7 @@ module.exports = app => {
   router.get('/newsindex', controller.news.index)
   router.get('/newscontent', controller.news.content)
   router.get('/newslist/:ido', controller.news.list)
+  router.post('/newssave', controller.news.newsSave)
   router.get('/spider', controller.news.spiderNews)
+
 }

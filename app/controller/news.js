@@ -20,6 +20,12 @@ class NewsController extends Controller {
     // this.ctx.body = '新闻首页'
   }
 
+  async newsSave() {
+    // 获取post数据
+    console.log('接收的数据为:', this.ctx.request.body)
+    this.ctx.body = '保存数据'
+  }
+
   async list() {
     // 获取动态路由 传值  // koa  = ctx.params
     console.log(this.ctx.params)

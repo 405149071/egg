@@ -20,7 +20,15 @@
         <%}%>
     </ul>
 
-    <img src="/public/images/panda.jpg" />
+    <form action="/newssave" method="post">
+        <!--需要在action后边加上——csrf或者隐藏于——csrf才能提交数据，否则提交不了-->
+        <input type="text" name="_csrf" value="<%=csrf%>" >
+        用户名:<input type="text" name="name"> <br />
+        密码:<input type="text" name="pass"> <br />
+        <input type="submit" value="提交">
+        </form>
+
+        <img src="/public/images/panda.jpg" />
 </body>
 
 </html>
