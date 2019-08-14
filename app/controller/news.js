@@ -13,6 +13,8 @@ class NewsController extends Controller {
     // console.log(list, '11111')
     // 获取cookie的值
     console.log('cookie username=', this.ctx.cookies.get('username'))
+    // 获取session的值
+    console.log('session:', this.ctx.session.userinfo)
     await this.ctx.render('news', {
       msg,
       list,

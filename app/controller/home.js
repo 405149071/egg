@@ -25,6 +25,11 @@ class HomeController extends Controller {
       encrypt: true, // 默认false  是否加密，如果加密以后，取值时需要解密
 
     })
+    // 设置session
+    this.ctx.session.userinfo = {
+      name: '张三',
+      age: 25,
+    }
     ctx.body = '你好hi, egg' + url
     console.log('============================')
 
