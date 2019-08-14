@@ -16,8 +16,11 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1565683925598_4013'
 
   // add your middleware config here
-  config.middleware = []
-
+  config.middleware = [ 'printdate', 'forbidip' ]
+  // 中间件传参数
+  config.printdate = {
+    aaa: 'aaaaaa',
+  }
   // 配置模版引擎
   config.view = {
     mapping: {
