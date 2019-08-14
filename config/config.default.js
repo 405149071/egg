@@ -31,6 +31,32 @@ module.exports = appInfo => {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
   }
 
+  // 配置db
+  config.sequelize = {
+    dialect: 'mysql',
+    host: '127.0.0.1',
+    port: 3306,
+    database: 'daily',
+    username: 'root',
+    password: 'root',
+    define: { // model的全局配置
+      timestamps: true, // 添加create，update,delete时间戳
+      paranoid: true, // 软删除
+      freezeTableName: true, // 防止修改表明为复数
+      underscored: false, // 防止驼峰被默认转下划线
+    },
+    timezone: '+8:00', // 由于orm用的utc时间，必须要加东八区
+    dialectOptions: { // 读取的datetime类型返回字符串，而不是utc
+      dateStrings: true,
+      typeCast(field, next) {
+        if (field.type === 'DATETIME') {
+          return field.string()
+        }
+        return next()
+      },
+    },
+  }
+
   // 配置session
   // 默认值
   // exports.session = {
