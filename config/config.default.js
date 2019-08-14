@@ -21,6 +21,10 @@ module.exports = appInfo => {
   config.printdate = {
     aaa: 'aaaaaa',
   }
+  config.forbidip = {
+    forbidips: [ '127.0.0.2', '192.168.0.17' ],
+  }
+
   // 配置模版引擎
   config.view = {
     mapping: {
