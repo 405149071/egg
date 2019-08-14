@@ -25,7 +25,7 @@ class DailyController extends Controller {
     }
 
     const param = this.ctx.query
-
+    console.log('登录的参数', param)
     let message = ''
     if (param.username !== data.username) {
       message = '用户不存在'
