@@ -16,7 +16,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1565683925598_4013'
 
   // add your middleware config here
-  config.middleware = [ 'printdate', 'forbidip' ]
+  config.middleware = [ 'printdate', 'forbidip', 'auth' ]
   // 中间件传参数
   config.printdate = {
     aaa: 'aaaaaa',

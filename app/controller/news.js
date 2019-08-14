@@ -14,8 +14,8 @@ class NewsController extends Controller {
     await this.ctx.render('news', {
       msg,
       list,
-      // csrf防范
-      csrf: this.ctx.csrf,
+      // csrf防范  方法1如下，方法2 设置全局中间件auth
+      // csrf: this.ctx.csrf,
     })
     // this.ctx.body = '新闻首页'
   }
