@@ -16,13 +16,19 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1565683925598_4013'
 
   // add your middleware config here
-  config.middleware = ['printdate', 'forbidip', 'auth']
+  config.middleware = [ 'printdate', 'forbidip', 'auth' ]
   // 中间件传参数
   config.printdate = {
     aaa: 'aaaaaa',
   }
   config.forbidip = {
-    forbidips: ['127.0.0.2', '192.168.0.17'],
+    forbidips: [ '127.0.0.2', '192.168.0.17' ],
+  }
+
+  // 跨域
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
   }
 
   // 配置session
