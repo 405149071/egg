@@ -50,12 +50,25 @@ class DailyController extends Controller {
     }
     this.ctx.body = message
   }
+  // 添加日记内容
+  async add() {
+    // 从前端获取post请求发送过来的数据
+    const param = this.ctx.request.body
+    // console.log('添加的参数：', param)
+    // this.ctx.body = param
+    // 加入到db
+    const result = await this.ctx.model.Daily.create({
+      title: param.title,
+      content: param.content,
+      user_id: 2,
+    })
+    if (result) {
+      this.ctx.body = '创建成功'
+    } else {
+      this.ctx.body = '创建失败'
+    }
 
-  async news() {
-    const {
-      ctx,
-    } = this
-    ctx.body = '你好hi, news'
+    // this.ctx.body = '你好hi, news'
   }
 }
 

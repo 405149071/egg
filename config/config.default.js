@@ -16,13 +16,22 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1565683925598_4013'
 
   // add your middleware config here
-  config.middleware = [ 'printdate', 'forbidip', 'auth' ]
+  config.middleware = ['printdate', 'forbidip', 'auth']
+  // 安全防范 先暂时关闭csrf
+  // config.security = {
+  //   csrf: {
+  //     enable: false,
+  //     ignoreJSON: true,
+  //   },
+  //   domainWhiteList: [ '*' ],
+  // }
+
   // 中间件传参数
   config.printdate = {
     aaa: 'aaaaaa',
   }
   config.forbidip = {
-    forbidips: [ '127.0.0.2', '192.168.0.17' ],
+    forbidips: ['127.0.0.2', '192.168.0.17'],
   }
 
   // 跨域
